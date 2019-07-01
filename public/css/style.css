@@ -1,0 +1,75 @@
+body{
+    background-color: lightcyan;
+}
+
+html, body {margin: 0; height: 100%; overflow: hidden}
+
+#test {
+    width:100%;
+}
+
+img{
+    position: absolute;
+}
+
+#submitbutton
+{
+    border-radius: 50px;
+    height: 50px;
+    width:70px;
+    font-size: 30px;
+    text-align: center;
+    color: lightcyan;
+    background-color: blue;
+    border-color: black;
+    margin-bottom: 50px;
+    position: absolute;
+    margin-left:10px;
+}
+#city{
+    width:40%;
+    height: 50px;
+    font-size: 30px;
+    left:-10px;
+}
+
+#loading {
+    position: absolute;
+    animation: rotation 50s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+            transform: rotate(0deg);
+    }
+    to {
+            transform: rotate(359deg);
+    }
+}
+
+.il{
+    animation: wobbleleft 3s infinite linear;
+}
+
+@keyframes wobbleleft {
+    0%{ transform: translateX(0%);}
+    50%{transform: translateX(-25%) rotate(-20deg);}
+    100%{transform: translateX(0%);}
+}
+
+.ir{
+    animation: wobbleright 3s infinite linear;
+}
+
+@keyframes wobbleright {
+    0%{ transform: translateX(0%);}
+    50%{transform: translateX(25%) rotate(20deg);}
+    100%{transform: translateX(0%);}
+}
+
+
+
+@keyframes wind{
+    0%{transform: scaleX(0);}
+    100%{transform: scaleX(1);}
+}

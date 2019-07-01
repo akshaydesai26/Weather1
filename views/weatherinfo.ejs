@@ -1,0 +1,175 @@
+<html>
+    <head>
+        <title>WEATHER</title>
+        <style>
+        body{font-family:Verdana, sans-serif; margin-left: 30px; margin-top: 20px;}
+        h1{font-size: 48px;text-transform: uppercase}
+        #speed{
+            width:500px;
+            color: blue;
+        }
+        .bar{
+            background: white;
+            display: block;
+            height: 20px;
+            border: 1px solid black;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-top: 50px;
+
+        }
+        .bar span{
+            height:20px;
+            float: left;
+            background:cyan;
+        }
+        .item{
+            width:60%;
+            animation:speed 2s;
+            font-family: 'Comic Sans MS';
+        }
+        /*@keyframes speed{
+            0%{
+                width:0%;
+            }
+            100%{
+                width:60%;
+            }
+        }*/
+       /* .ring{
+            margin-top:20px;
+        width:150px;
+        height:150px;
+        background: red;
+        border: 3px solid black;
+        border-radius: 50%;
+        line-height: 150px;
+        text-align: center;
+        }
+        .ring::before{
+            content:'';
+            position:absolute;
+            top:0;
+            left:0;
+            width:50%;
+            height:100%;
+            border: 3px solid transparent;
+            border-top: 3px solid #fff000;
+            border-right: 3px solid #fff000;
+            border-radius: 50%;
+            animation:animateCircle 2s linear;
+        }*/
+        </style>
+        <link href="/css/style2.css" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+        <script src="jquery.easypiechart.js"></script>
+        <script src="jquery.keyframes.min.js"></script>
+    </head>
+
+    <body>
+            <form action="/find" method="POST" id="form2">
+
+                
+                <input
+                  type="text"
+                  id="city"
+                  name="city"
+                  class="form-control"
+                  placeholder="Enter city"
+                  
+                /> 
+                    <button type="submit" id="submitbutton">
+                            <i class="fas fa-bolt"></i>
+                          </button>
+                </form>
+        
+        <div id="weath"><%=weath%></div>
+        <div id="temp">Temperature: <span id="temp2"><%=temp%></span>&#176</div>
+        <!--<div id="windsp"><%=windsp%></div>-->
+        <!--<div id="windang"><%=windang%></div>-->
+        <div style="display:none" id="windlength"><%=windlength%></div>
+
+        <div class='speed' id='speed'>
+            <span class="bar"><span class="item">Wind Speed</span><%=windsp%></span>
+        </div>
+
+        <div class="container">
+            <h1 class="inlining">Wind angle:</h2>
+            <div class="box inlining">
+                <div class="chart inlining" data-percent="73"></div>
+                <h2 class="inlining" id="windangle"><%=windang%></h1>
+
+            </div>
+        </div>
+
+        
+
+        <!--<canvas height="200" width="200" id="counter"/>-->
+        <!--<div class="ring">
+            angle
+            <span>
+
+            </span>
+        </div>-->
+    </body>
+
+    <script>
+        $(function() {
+            $('.chart').easyPieChart({
+                
+            });
+        });
+    </script>
+    <script>
+            $('#test').click(function(){
+                 $(this).hide();
+             })
+        $(document).ready(function(){
+             if($('#weath').text()=='Clear')
+             {
+                 $('body').css("background-image", "url('../weatherclear.jpg')");
+             }
+             else if($('#weath').text()=='Clouds')
+             {
+                 $('body').css("background-image", "url('../weatherclouds.jpg')");
+             }
+             else if($('#weath').text()=='Thunderstorm')
+             {
+                 $('body').css("background-image", "url('../weatherthunderstorm.jpg')");
+             }
+             else if($('#weath').text()=='Rain')
+             {
+                 $('body').css("background-image", "url('../weatherrain.jpg')");
+             }
+             else if($('#weath').text()=='Haze')
+             {
+                 $('body').css("background-image", "url('../weatherhaze.jpg')");
+             }
+             //alert($('#temp2').text());
+             if($('#temp2').text()<21)
+             {
+                 
+                 $('#temp2').css("background","linear-gradient(330deg, #FFFFFF 0%, #0000FF 25%, #FFFFFF 50%, #0000FF 75%, #FFFFFF 100%)");
+             $('#temp2').css("-webkit-background-clip","text");
+             $('#temp2').css("-webkit-text-fill-color","transparent");}
+             else 
+             { $('#temp2').css("background","linear-gradient(330deg, #FFFFFF 0%, #FF0000 25%, #FFFFFF 50%, #FF0000 75%, #FFFFFF 100%)");
+             $('#temp2').css("-webkit-background-clip","text");
+             $('#temp2').css("-webkit-text-fill-color","transparent");
+             
+            }
+
+            var windlength1 = $('#windlength').text() + "%";
+            //alert($('#windlength').text());
+            $(".item").css("width",windlength1);
+
+            $.keyframe.define([{
+            name: 'speed',
+            '0%':   {width:"0%"},
+            '100%': {width: windlength1}
+            }]);
+             //alert($('#weath').text());
+            });
+         </script>
+</html>

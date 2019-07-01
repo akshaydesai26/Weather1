@@ -1,0 +1,67 @@
+#line{
+    height:10px;
+    width:50%;
+    background-color: whitesmoke;
+    animation: wind 5s 1 linear;
+    
+}
+
+body{
+    background-image: url('../earth.png');
+    background-repeat: none;
+    background-size: cover;
+    transition: 2s;
+}
+
+#weath{
+    font-family: 'Comic Sans MS';
+    color: white;
+    font-size: 80px;
+}
+
+#temp{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 80px;
+    color: white;
+    background: linear-gradient(330deg, #FFFFFF 0%, #0000FF 25%, #FFFFFF 50%, #0000FF 75%, #FFFFFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.inlining{
+    display: inline-block;
+}
+
+#submitbutton
+{
+    border-radius: 50px;
+    height: 20px;
+    width:40px;
+    font-size: 10px;
+    text-align: center;
+    color: lightcyan;
+    background-color: blue;
+    border-color: black;
+    margin-bottom: 50px;
+    position: absolute;
+    margin-left:10px;
+}
+#city{
+    width:30%;
+    height: 20px;
+    font-size: 10px;
+    left:-10px;
+}
+
+div{
+    margin-top: 20px;
+}
+.chart{
+    position: relative;
+    top:40px;
+}
+#windangle{
+    position: relative;
+    margin-left:-90px;
+}

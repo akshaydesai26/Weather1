@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>WEATHER</title>
+        <style>
+        body{font-family:Verdana, sans-serif;}
+        h1{font-size: 48px;text-transform: uppercase};
+        </style>
+        <link href="/css/style.css" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    </head>
+
+    <body>
+       <!-- <video src="smoke.mp4" autoplay muted style="height: 200%; z-index: -1"></video>-->
+        <img class="ir" src="beach.gif" style="height: 25%; top:10%; left: 85% ">
+        <img class="il" src="umbrella.png" style="height: 23%; left:5%; top:10%; z-index: 1">
+        <img class="ir" src="autumn.gif" style="height: 25%; top:10%; left:5%">
+        <img class="il" src="snow.png" style="height: 25%; left:80%; top:10%">
+
+
+        <div id="test" style="text-align: center; margin-top:15%">
+            
+
+            <form action="/find" method="POST">
+
+                
+            <input
+              type="text"
+              id="city"
+              name="city"
+              class="form-control"
+              placeholder="Enter city"
+              
+            /> 
+                <button type="submit" id="submitbutton">
+                        <i class="fas fa-bolt"></i>
+                      </button>
+            </form>
+
+        </div>
+
+            <img id="loading" src="earth.png" style="margin-top: 10%; margin-left: -3%; height: 200%;" >
+
+            <script>
+               /* $('#test').click(function(){
+                    $(this).hide();
+                })*/
+            </script>
+    </body>
+</html>
